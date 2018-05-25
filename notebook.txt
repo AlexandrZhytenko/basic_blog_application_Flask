@@ -1,0 +1,67 @@
+
+os — Miscellaneous operating system interfaces
+
+class flask.Config(root_path, defaults=None)
+Works exactly like a dict but provides ways to fill it from files or special dictionaries
+
+from_mapping(*mapping, **kwargs)
+Updates the config like update() ignoring items with non-upper keys
+
+class flask.Flask(import_name, static_url_path=None, static_folder='static', static_host=None, host_matching=False, subdomain_matching=False, template_folder='templates', instance_path=None, instance_relative_config=False, root_path=None)
+The flask object implements a WSGI application and acts as the central object
+
+instance_relative_config – if set to True relative filenames for loading the config are assumed to be relative to the instance path instead of the application root
+
+from_pyfile(filename, silent=False)
+Updates the values in the config from a Python file
+*silent – set to True if you want silent failure for missing files
+---------------------------
+set FLASK_APP=flaskr
+set FLASK_ENV=development
+flask run
+---------------------------
+
+Click is a Python package for creating beautiful command line interfaces in a composable way with as little code as necessary.
+
+flask.current_app
+Points to the application handling the request
+
+flask.g
+A namespace object that can store data during an application context.
+
+flask.cli.with_appcontext
+Wraps a callback so that it’s guaranteed to be executed with the script’s application context.
+
+class sqlite3.Row
+A Row instance serves as a highly optimized row_factory for Connection objects
+
+open_resource(resource, mode='rb')
+Opens a resource from the application’s resource folder
+
+app.teardown_appcontext()
+tells Flask to call that function when cleaning up after returning the response
+teardown_appcontext(f)
+Registers a function to be called when the application context ends
+
+app.cli.add_command() adds a new command that can be called with the flask command
+add_command(cmd, name=None)
+Registers another Command with this group
+
+
+stop: http://flask.pocoo.org/docs/1.0/tutorial/views/
+
+functools — Higher-order functions and operations on callable objects
+
+werkzeug.security.generate_password_hash
+Hash a password with the given method and salt with a string of the given length
+
+werkzeug.security.check_password_hash(pwhash, password)
+check a password against a given salted and hashed password value
+
+stop: Templates
+http://flask.pocoo.org/docs/1.0/tutorial/templates/
+
+
+
+
+
