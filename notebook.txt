@@ -58,6 +58,12 @@ Hash a password with the given method and salt with a string of the given length
 werkzeug.security.check_password_hash(pwhash, password)
 check a password against a given salted and hashed password value
 
+werkzeug.exceptions.abort(status, *args, **kwargs)
+Raises an HTTPException for the given status code or WSGI application
+
+
+
+______________
 stop: Templates
 http://flask.pocoo.org/docs/1.0/tutorial/templates/
 
