@@ -61,6 +61,30 @@ check a password against a given salted and hashed password value
 werkzeug.exceptions.abort(status, *args, **kwargs)
 Raises an HTTPException for the given status code or WSGI application
 
+tempfile.mkstemp() creates and opens a temporary file, returning the file object and the path to it.
+
+TESTING tells Flask that the app is in test mode.
+
+The client fixture calls app.test_client() with the application object created by the app fixture.
+
+The runner fixture is similar to client. app.test_cli_runner() creates a runner that can call the Click commands registered with the application.
+
+client.get() makes a GET request and returns the Response object returned by Flask. Similarly, client.post() makes a POST request, converting the data dict into form data.
+
+To test that the page renders successfully, a simple request is made and checked for a 200 OK status_code. If rendering failed, Flask would return a 500 Internal Server Error code.
+
+headers will have a Location header with the login URL when the register view redirects to the login view.
+
+data contains the body of the response as bytes. If you expect a certain value to render on the page, check that it’s in data. Bytes must be compared to bytes. If you want to compare Unicode text, use get_data(as_text=True) instead.
+
+pytest.mark.parametrize tells Pytest to run the same test function with different arguments. You use it here to test different invalid input and error messages without writing the same code three times.
+
+The tests for the login view are very similar to those for register. Rather than testing the data in the database, session should have user_id set after logging in.
+
+Using client in a with block allows accessing context variables such as session after the response is returned. Normally, accessing session outside of a request would raise an error.
+
+Testing logout is the opposite of login. session should not contain user_id after logging out.
+
 
 
 ______________
