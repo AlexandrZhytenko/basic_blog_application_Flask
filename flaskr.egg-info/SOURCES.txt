@@ -1,4 +1,6 @@
 MANIFEST.in
+setup.cfg
+setup.py
 flaskr/__init__.py
 flaskr/auth.py
 flaskr/blog.py

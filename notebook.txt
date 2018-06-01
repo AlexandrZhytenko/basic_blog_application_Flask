@@ -87,10 +87,6 @@ Testing logout is the opposite of login. session should not contain user_id afte
 
 
 
-______________
-stop: Templates
-http://flask.pocoo.org/docs/1.0/tutorial/templates/
-
 
 
 
